@@ -1,8 +1,9 @@
-def prime?(*nums)
-  nums.each { |num|
-    puts "#{num} is #{ is_prime?(num) ? '' : "not " }a prime" }
-end
-
-def is_prime?(num)
-  (2...Math.sqrt(num)).all? { |i| num % i != 0 }
+def prime?(integer)
+    return false if integer < 2
+    (2..integer - 1).each do |x|
+        if (integer % x) == 0
+            return false
+        end
+    end
+    true
 end
